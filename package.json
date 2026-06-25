@@ -1,0 +1,21 @@
+{
+  "name": "fx-timing-advisor",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "echarts": "^6.1.0",
+    "vue": "^3.5.38",
+    "vue-echarts": "^8.0.1",
+    "vue-router": "^5.1.0"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^6.0.7",
+    "vite": "^8.1.0"
+  }
+}
