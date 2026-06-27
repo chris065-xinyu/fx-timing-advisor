@@ -1776,13 +1776,16 @@ a {
 
 .gauge-pointer {
   transform-origin: 150px 150px;
-  transition: transform 0.8s ease;
+  transition: transform 0.8s cubic-bezier(0.4, 2, 0.3, 1);
 }
 
-.gauge-pointer path {
-  fill: url(#gaugeGradient);
-  stroke: none;
-  filter: drop-shadow(0 0 8px rgba(245, 158, 11, 0.55));
+.gauge-pointer-fill {
+  fill: #ffffff;
+  stroke: rgba(255, 255, 255, 0.25);
+  stroke-width: 1;
+  filter:
+    drop-shadow(0 0 6px rgba(255, 255, 255, 0.25))
+    drop-shadow(0 0 12px rgba(20, 241, 213, 0.25));
 }
 
 .gauge-svg text {
