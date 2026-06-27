@@ -1,0 +1,8 @@
+{
+    "rewrites": [
+      {
+        "source": "/fx-api/:path*",
+        "destination": "https://api.frankfurter.app/:path*"
+      }
+    ]
+  }
