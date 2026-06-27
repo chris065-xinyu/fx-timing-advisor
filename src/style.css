@@ -1665,37 +1665,34 @@ a {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 40px;
+    gap: 24px;
     width: 100%;
-    overflow: visible;
-  }
-  
-  .premium-gauge {
-    width: 520px;
-    height: 300px;
-    transform: scale(0.38);
-    transform-origin: top center;
-    margin: 10px auto -160px;
-    left: auto;
-    right: auto;
   }
 
-  .sentiment-card,
-.sentiment-box {
-  overflow: visible;
-}
+  .responsive-gauge {
+    width: 100%;
+    max-width: 360px;
+    margin: 12px auto 0;
+  }
+
+  .gauge-svg {
+    width: 100%;
+    height: auto;
+    display: block;
+    overflow: visible;
+  }
 
   .sentiment-copy {
     width: 100%;
-    max-width: 100%;
     text-align: center;
     padding: 0 10px;
   }
-  
-  .sentiment-copy p {
-    width: 100%;
+
+  .sentiment-pill {
+    min-width: unset;
     max-width: 100%;
-    word-break: break-word;
+    padding: 14px 24px;
+    font-size: 20px;
   }
 
   .sentiment-copy h3 {
@@ -1703,7 +1700,10 @@ a {
   }
 
   .sentiment-copy p {
+    width: 100%;
+    max-width: 100%;
     font-size: 15px;
+    word-break: break-word;
   }
 
   .footer {
@@ -1746,8 +1746,7 @@ a {
     font-size: 22px;
   }
 
-  .premium-gauge {
-    transform: scale(0.42);
-    margin: -40px 0 -160px;
+  .responsive-gauge {
+    max-width: 310px;
   }
 }

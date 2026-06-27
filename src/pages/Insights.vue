@@ -121,26 +121,34 @@
       </div>
 
       <div class="sentiment-box premium-sentiment">
-        <div class="premium-gauge">
-          <div class="gauge-arc"></div>
-          <div
-            class="gauge-needle"
-            :style="{
-              transform: `rotate(${marketSentiment.score * 1.8 - 180}deg)`,
-            }"
-          ></div>
-          <div class="gauge-center"></div>
+        <div class="responsive-gauge">
+          <svg viewBox="0 0 300 180" class="gauge-svg">
+            <path class="gauge-bg" d="M 30 150 A 120 120 0 0 1 270 150" />
 
-          <span class="gauge-num zero">0</span>
-          <span class="gauge-num twentyfive">25</span>
-          <span class="gauge-num fifty">50</span>
-          <span class="gauge-num seventyfive">75</span>
-          <span class="gauge-num hundred">100</span>
+            <path class="gauge-red" d="M 30 150 A 120 120 0 0 1 90 46" />
+            <path class="gauge-orange" d="M 90 46 A 120 120 0 0 1 150 30" />
+            <path class="gauge-blue" d="M 150 30 A 120 120 0 0 1 210 46" />
+            <path class="gauge-green" d="M 210 46 A 120 120 0 0 1 270 150" />
 
-          <div class="gauge-score">
-            <strong>{{ marketSentiment.score }}</strong>
-            <span>/100</span>
-          </div>
+            <g
+              class="gauge-pointer"
+              :style="{
+                transform: `rotate(${marketSentiment.score * 1.8 - 90}deg)`,
+              }"
+            >
+              <line x1="150" y1="150" x2="150" y2="55" />
+            </g>
+
+            <circle cx="150" cy="150" r="10" class="gauge-dot" />
+
+            <text x="30" y="170">0</text>
+            <text x="150" y="22" text-anchor="middle">50</text>
+            <text x="270" y="170" text-anchor="end">100</text>
+
+            <text x="150" y="130" text-anchor="middle" class="gauge-score-svg">
+              {{ marketSentiment.score }}/100
+            </text>
+          </svg>
         </div>
 
         <div class="sentiment-copy">
@@ -546,9 +554,6 @@ const marketSessions = computed(() => {
       status: isOpen(market.open, market.close) ? "Open" : "Closed",
     }));
 });
-
-  
-
 
 onMounted(async () => {
   await loadInsights();
