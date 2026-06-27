@@ -1768,8 +1768,9 @@ a {
   overflow: visible;
 }
 
-.gauge-svg path {
+.gauge-arc-path {
   fill: none;
+  stroke: url(#gaugeGradient);
   stroke-width: 20;
   stroke-linecap: round;
 }
