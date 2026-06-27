@@ -1757,8 +1757,8 @@ a {
 
 .responsive-gauge {
   width: 100%;
-  max-width: 420px;
-  margin: 20px auto;
+  max-width: 430px;
+  margin: 10px auto 24px;
 }
 
 .gauge-svg {
@@ -1768,30 +1768,41 @@ a {
   overflow: visible;
 }
 
-
+.gauge-arc {
+  fill: none;
+  stroke: url(#gaugeGradient);
+  stroke-width: 22;
+  stroke-linecap: round;
+  filter: drop-shadow(0 0 10px rgba(20, 241, 213, 0.18));
+}
 
 .gauge-pointer {
   transform-origin: 150px 150px;
-  transition: transform 0.9s cubic-bezier(0.4, 1.6, 0.3, 1);
+  transition: transform 0.9s cubic-bezier(0.4, 1.4, 0.3, 1);
 }
 
 .gauge-pointer-fill {
   fill: url(#pointerGradient);
-  stroke: rgba(255, 255, 255, 0.15);
+  stroke: rgba(255, 255, 255, 0.25);
   stroke-width: 1;
-  filter:
-    drop-shadow(0 0 6px rgba(255, 255, 255, 0.25))
-    drop-shadow(0 0 12px rgba(20, 241, 213, 0.25));
+  filter: drop-shadow(0 0 10px rgba(245, 158, 11, 0.45));
 }
 
-.gauge-svg text {
+.gauge-center-dot {
+  fill: #081327;
+  stroke: #14f1d5;
+  stroke-width: 3;
+  filter: drop-shadow(0 0 10px rgba(20, 241, 213, 0.45));
+}
+
+.gauge-label {
   fill: #cbd5e1;
-  font-size: 13px;
+  font-size: 15px;
   font-weight: 800;
 }
 
 .gauge-score-svg {
-  fill: #ffffff !important;
-  font-size: 20px !important;
-  font-weight: 900 !important;
+  fill: #ffffff;
+  font-size: 24px;
+  font-weight: 900;
 }

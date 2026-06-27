@@ -122,70 +122,65 @@
 
       <div class="sentiment-box premium-sentiment">
         <div class="responsive-gauge">
-          <svg viewBox="0 0 300 180" class="gauge-svg">
+          <svg viewBox="0 0 300 215" class="gauge-svg">
             <defs>
               <linearGradient
-                id="pointerGradient"
-                x1="0%"
-                y1="100%"
-                x2="100%"
-                y2="0%"
+                id="gaugeGradient"
+                x1="30"
+                y1="150"
+                x2="270"
+                y2="150"
+                gradientUnits="userSpaceOnUse"
               >
-                <stop offset="0%" stop-color="#f59e0b" />
-                <stop offset="45%" stop-color="#fde68a" />
-                <stop offset="100%" stop-color="#67e8f9" />
+                <stop offset="0%" stop-color="#ef4444" />
+                <stop offset="32%" stop-color="#f59e0b" />
+                <stop offset="68%" stop-color="#3b82f6" />
+                <stop offset="100%" stop-color="#10b981" />
+              </linearGradient>
+
+              <linearGradient
+                id="pointerGradient"
+                x1="45"
+                y1="150"
+                x2="150"
+                y2="150"
+                gradientUnits="userSpaceOnUse"
+              >
+                <stop offset="0%" stop-color="#bfffe8" />
+                <stop offset="55%" stop-color="#facc15" />
+                <stop offset="100%" stop-color="#f97316" />
               </linearGradient>
             </defs>
 
-            <!-- 渐变半圆 -->
-            <path
-              d="M30 150 A120 120 0 0 1 270 150"
-              fill="none"
-              stroke="url(#gaugeGradient)"
-              stroke-width="18"
-              stroke-linecap="round"
-            />
+            <path class="gauge-arc" d="M30 150 A120 120 0 0 1 270 150" />
 
-            <!-- 扇形指针 -->
-            <!-- Car Speedometer Style Pointer -->
             <g
               class="gauge-pointer"
               :style="{
-                transform: `rotate(${marketSentiment.score * 1.8 - 180}deg)`,
+                transform: `rotate(${marketSentiment.score * 1.8}deg)`,
               }"
             >
               <path
                 class="gauge-pointer-fill"
-                d="
-                    M150 150
-                    L136 142
-                    L145 58
-                    Q150 48 155 58
-                    L164 142
-                    Z
-                  "
+                d="M150 150 L138 141 L48 150 L138 159 Z"
               />
             </g>
 
-            <!-- 中心圆 -->
-            <circle
-              cx="150"
-              cy="150"
-              r="18"
-              fill="#081327"
-              stroke="#14f1d5"
-              stroke-width="2"
-            />
+            <circle class="gauge-center-dot" cx="150" cy="150" r="19" />
 
-            <!-- 刻度 -->
-            <text x="30" y="170">0</text>
-            <text x="90" y="75">25</text>
-            <text x="150" y="30" text-anchor="middle">50</text>
-            <text x="210" y="75">75</text>
-            <text x="270" y="170" text-anchor="end">100</text>
+            <text class="gauge-label" x="30" y="174">0</text>
+            <text class="gauge-label" x="85" y="85">25</text>
+            <text class="gauge-label" x="150" y="38" text-anchor="middle">
+              50
+            </text>
+            <text class="gauge-label" x="215" y="85" text-anchor="middle">
+              75
+            </text>
+            <text class="gauge-label" x="270" y="174" text-anchor="end">
+              100
+            </text>
 
-            <!-- 分数 -->
-            <text x="150" y="135" text-anchor="middle" class="gauge-score-svg">
+            <text x="150" y="205" text-anchor="middle" class="gauge-score-svg">
               {{ marketSentiment.score }}/100
             </text>
           </svg>
