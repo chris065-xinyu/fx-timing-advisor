@@ -1675,11 +1675,20 @@ a {
   }
 
   .premium-gauge {
-    width: 520px;
+    width: 320px;
+    height: 210px;
     transform: scale(0.62);
     transform-origin: top left;
-    margin-left: 50%;
-    translate: -50% 0;
+    margin: 0 auto;
+  }
+  
+  .gauge-arc {
+    width: 520px;
+    height: 260px;
+  }
+  
+  .sentiment-card {
+    overflow: hidden;
   }
 
   .sentiment-copy h3 {
