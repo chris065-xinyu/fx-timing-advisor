@@ -1,28 +1,35 @@
-import { createRouter, createWebHistory } from 'vue-router'
+import { createRouter, createWebHistory } from "vue-router";
 
-import Home from '../pages/Home.vue'
-import Analysis from '../pages/Analysis.vue'
-import Insights from '../pages/Insights.vue'
+import Home from "../pages/Home.vue";
+import Analysis from "../pages/Analysis.vue";
+import Insights from "../pages/Insights.vue";
 
 const router = createRouter({
   history: createWebHistory(),
+
+  scrollBehavior() {
+    return {
+      top: 0,
+    };
+  },
+
   routes: [
     {
-      path: '/',
-      name: 'Home',
-      component: Home
+      path: "/",
+      name: "Home",
+      component: Home,
     },
     {
-      path: '/analysis',
-      name: 'Analysis',
-      component: Analysis
+      path: "/analysis",
+      name: "Analysis",
+      component: Analysis,
     },
     {
-      path: '/insights',
-      name: 'Insights',
-      component: Insights
-    }
-  ]
-})
+      path: "/insights",
+      name: "Insights",
+      component: Insights,
+    },
+  ],
+});
 
-export default router
+export default router;

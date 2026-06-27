@@ -1516,12 +1516,10 @@ a {
 ========================= */
 
 @media (max-width: 768px) {
-
   .page {
     padding: 24px 16px;
   }
 
-  /* Navbar */
   .navbar {
     height: auto;
   }
@@ -1529,25 +1527,29 @@ a {
   .nav-container {
     padding: 14px 16px;
     flex-direction: column;
+    align-items: stretch;
     gap: 14px;
+  }
+
+  .brand {
+    justify-content: flex-start;
   }
 
   .nav-links {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
-    gap: 10px;
+    justify-content: flex-start;
+    gap: 8px;
   }
 
   .nav-links a {
-    padding: 8px 12px;
-    font-size: 13px;
+    padding: 8px 10px;
+    font-size: 12px;
   }
 
-  /* Hero */
   .hero {
     grid-template-columns: 1fr;
-    gap: 40px;
+    gap: 36px;
     text-align: center;
   }
 
@@ -1558,12 +1560,22 @@ a {
 
   .hero-text {
     font-size: 16px;
-    margin: auto;
+    margin: 0 auto;
   }
 
   .hero-actions {
+    display: flex;
     flex-direction: column;
-    align-items: center;
+    width: 100%;
+    gap: 14px;
+  }
+
+  .hero-actions a,
+  .hero-actions .primary-btn,
+  .hero-actions .secondary-btn {
+    width: 100%;
+    text-align: center;
+    display: block;
   }
 
   .hero-stats {
@@ -1572,7 +1584,6 @@ a {
     gap: 24px;
   }
 
-  /* Globe */
   .fx-orbit-system {
     width: 280px;
     height: 280px;
@@ -1591,11 +1602,11 @@ a {
     transform: scale(0.6);
   }
 
-  /* Cards */
   .card {
     padding: 20px;
   }
 
+  .stats-grid,
   .stats-row,
   .pairs-grid,
   .movers-grid,
@@ -1604,7 +1615,6 @@ a {
     grid-template-columns: 1fr;
   }
 
-  /* Analysis */
   .analysis-top {
     grid-template-columns: 1fr;
     gap: 30px;
@@ -1619,23 +1629,76 @@ a {
     padding: 24px;
   }
 
-  /* Chart */
   .real-chart {
     height: 260px;
   }
 
-  /* Sentiment Gauge */
-  .premium-gauge {
-    width: 100%;
-    transform: scale(0.65);
-    transform-origin: top center;
-    margin-top: -40px;
+  .heatmap {
+    overflow-x: auto;
   }
 
-  /* Footer */
+  .premium-sentiment {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .premium-gauge {
+    width: 520px;
+    transform: scale(0.62);
+    transform-origin: top left;
+    margin-left: 50%;
+    translate: -50% 0;
+  }
+
+  .sentiment-copy h3 {
+    font-size: 22px;
+  }
+
+  .sentiment-copy p {
+    font-size: 15px;
+  }
+
   .footer {
     grid-template-columns: 1fr;
     gap: 40px;
+    text-align: left;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero h1 {
+    font-size: 30px;
+  }
+
+  .hero-text {
+    font-size: 15px;
+  }
+
+  .primary-btn,
+  .secondary-btn {
+    width: 100%;
     text-align: center;
+  }
+
+  .hero-stats strong {
+    font-size: 20px;
+  }
+
+  .hero-stats span {
+    font-size: 12px;
+  }
+
+  .live-rate-box h2 {
+    font-size: 26px;
+  }
+
+  .percent-circle {
+    width: 72px;
+    height: 72px;
+    font-size: 22px;
+  }
+
+  .premium-gauge {
+    transform: scale(0.52);
   }
 }
