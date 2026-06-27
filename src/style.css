@@ -534,9 +534,6 @@ a {
     grid-template-columns: 1fr;
   }
 
-  .nav-links {
-    display: none;
-  }
 
   .hero h1 {
     font-size: 42px;
@@ -1535,13 +1532,6 @@ a {
 ========================= */
 
 @media (max-width: 768px) {
-  .nav-container {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 14px 16px;
-    gap: 14px;
-  }
 
   .nav-links {
     justify-content: flex-start;
@@ -1559,7 +1549,7 @@ a {
   .nav-container {
     padding: 14px 16px;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
     gap: 14px;
   }
 
@@ -1674,22 +1664,7 @@ a {
     gap: 24px;
   }
 
-  .premium-gauge {
-    width: 320px;
-    height: 210px;
-    transform: scale(0.62);
-    transform-origin: top left;
-    margin: 0 auto;
-  }
-  
-  .gauge-arc {
-    width: 520px;
-    height: 260px;
-  }
-  
-  .sentiment-card {
-    overflow: hidden;
-  }
+
 
   .sentiment-copy h3 {
     font-size: 22px;
