@@ -1554,14 +1554,16 @@ a {
   }
 
   .brand {
+    width: 100%;
     justify-content: flex-start;
   }
 
   .nav-links {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: flex-start;
-    gap: 8px;
+    width: 100%;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: nowrap;
   }
 
   .nav-links a {
