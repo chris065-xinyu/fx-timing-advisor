@@ -124,11 +124,16 @@
         <div class="responsive-gauge">
           <svg viewBox="0 0 300 180" class="gauge-svg">
             <defs>
-              <linearGradient id="gaugeGradient">
-                <stop offset="0%" stop-color="#ef4444" />
-                <stop offset="30%" stop-color="#f59e0b" />
-                <stop offset="70%" stop-color="#3b82f6" />
-                <stop offset="100%" stop-color="#10b981" />
+              <linearGradient
+                id="pointerGradient"
+                x1="0%"
+                y1="100%"
+                x2="100%"
+                y2="0%"
+              >
+                <stop offset="0%" stop-color="#f59e0b" />
+                <stop offset="45%" stop-color="#fde68a" />
+                <stop offset="100%" stop-color="#67e8f9" />
               </linearGradient>
             </defs>
 
@@ -142,20 +147,23 @@
             />
 
             <!-- 扇形指针 -->
+            <!-- Car Speedometer Style Pointer -->
             <g
               class="gauge-pointer"
               :style="{
-                transform: `rotate(${marketSentiment.score * 1.8 - 90}deg)`,
+                transform: `rotate(${marketSentiment.score * 1.8 - 180}deg)`,
               }"
             >
               <path
-                d="
-      M150 150
-      L142 142
-      A90 90 0 0 1 158 142
-      Z
-    "
                 class="gauge-pointer-fill"
+                d="
+                    M150 150
+                    L136 142
+                    L145 58
+                    Q150 48 155 58
+                    L164 142
+                    Z
+                  "
               />
             </g>
 

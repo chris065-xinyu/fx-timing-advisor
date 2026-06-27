@@ -1768,22 +1768,20 @@ a {
   overflow: visible;
 }
 
-.gauge-arc-path {
-  fill: none;
-  stroke: url(#gaugeGradient);
-  stroke-width: 20;
-  stroke-linecap: round;
-}
+
 
 .gauge-pointer {
   transform-origin: 150px 150px;
-  transition: transform 0.8s ease;
+  transition: transform 0.9s cubic-bezier(0.4, 1.6, 0.3, 1);
 }
 
 .gauge-pointer-fill {
-  fill: url(#gaugeGradient);
-  stroke: none;
-  filter: drop-shadow(0 0 10px rgba(20, 241, 213, 0.35));
+  fill: url(#pointerGradient);
+  stroke: rgba(255, 255, 255, 0.15);
+  stroke-width: 1;
+  filter:
+    drop-shadow(0 0 6px rgba(255, 255, 255, 0.25))
+    drop-shadow(0 0 12px rgba(20, 241, 213, 0.25));
 }
 
 .gauge-svg text {
