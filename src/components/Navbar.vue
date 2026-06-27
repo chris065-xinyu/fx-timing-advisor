@@ -11,10 +11,6 @@
         <RouterLink to="/analysis">Analysis</RouterLink>
         <RouterLink to="/insights">Insights</RouterLink>
       </nav>
-
-      <RouterLink to="/analysis" class="start-btn">
-        Start Analysis
-      </RouterLink>
     </div>
   </header>
 </template>
