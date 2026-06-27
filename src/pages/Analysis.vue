@@ -236,6 +236,10 @@ import {
 import VChart from "vue-echarts";
 
 import { getLatestRates, getHistoricalRates } from "../services/exchangeApi";
+import { storeToRefs } from "pinia";
+import { useCurrencyStore } from "@/stores/currencyStore";
+
+const currencyStore = useCurrencyStore();
 
 use([
   CanvasRenderer,
@@ -247,8 +251,7 @@ use([
 ]);
 
 const amount = ref("");
-const fromCurrency = ref("AUD");
-const toCurrency = ref("CNY");
+const { fromCurrency, toCurrency } = storeToRefs(currencyStore);
 
 const rates = ref({});
 const isLoading = ref(false);
@@ -604,18 +607,25 @@ const difference = computed(() => {
   });
 });
 
-const swapCurrencies = async () => {
+const swapCurrencies = () => {
   const temp = fromCurrency.value;
   fromCurrency.value = toCurrency.value;
   toCurrency.value = temp;
 };
 
 watch([fromCurrency, toCurrency, selectedRange], () => {
+  currencyStore.setCurrencyPair(fromCurrency.value, toCurrency.value);
+
   fetchRates();
   fetchHistoricalData();
 });
 
 onMounted(() => {
+  currencyStore.setCurrencyPair(
+    fromCurrency.value,
+    toCurrency.value
+  );
+
   fetchRates();
   fetchHistoricalData();
 });
