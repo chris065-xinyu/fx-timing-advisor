@@ -1510,3 +1510,132 @@ a {
     transform-origin: center;
   }
 }
+
+/* =========================
+   Mobile Responsive
+========================= */
+
+@media (max-width: 768px) {
+
+  .page {
+    padding: 24px 16px;
+  }
+
+  /* Navbar */
+  .navbar {
+    height: auto;
+  }
+
+  .nav-container {
+    padding: 14px 16px;
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .nav-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  .nav-links a {
+    padding: 8px 12px;
+    font-size: 13px;
+  }
+
+  /* Hero */
+  .hero {
+    grid-template-columns: 1fr;
+    gap: 40px;
+    text-align: center;
+  }
+
+  .hero h1 {
+    font-size: 36px;
+    line-height: 1.2;
+  }
+
+  .hero-text {
+    font-size: 16px;
+    margin: auto;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .hero-stats {
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 24px;
+  }
+
+  /* Globe */
+  .fx-orbit-system {
+    width: 280px;
+    height: 280px;
+  }
+
+  .earth {
+    width: 180px;
+    height: 180px;
+  }
+
+  .orbit-1,
+  .orbit-2,
+  .orbit-3,
+  .orbit-4,
+  .orbit-5 {
+    transform: scale(0.6);
+  }
+
+  /* Cards */
+  .card {
+    padding: 20px;
+  }
+
+  .stats-row,
+  .pairs-grid,
+  .movers-grid,
+  .steps-grid,
+  .features-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Analysis */
+  .analysis-top {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .live-rate-box h2 {
+    font-size: 30px;
+  }
+
+  .recommendation-wide {
+    grid-template-columns: 1fr;
+    padding: 24px;
+  }
+
+  /* Chart */
+  .real-chart {
+    height: 260px;
+  }
+
+  /* Sentiment Gauge */
+  .premium-gauge {
+    width: 100%;
+    transform: scale(0.65);
+    transform-origin: top center;
+    margin-top: -40px;
+  }
+
+  /* Footer */
+  .footer {
+    grid-template-columns: 1fr;
+    gap: 40px;
+    text-align: center;
+  }
+}
