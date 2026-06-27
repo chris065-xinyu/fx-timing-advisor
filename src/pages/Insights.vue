@@ -122,34 +122,66 @@
 
       <div class="sentiment-box premium-sentiment">
         <div class="responsive-gauge">
-          <svg viewBox="0 0 300 180" class="gauge-svg">
-            <path class="gauge-bg" d="M 30 150 A 120 120 0 0 1 270 150" />
+  <svg viewBox="0 0 300 180" class="gauge-svg">
+    <defs>
+      <linearGradient id="gaugeGradient">
+        <stop offset="0%" stop-color="#ef4444" />
+        <stop offset="30%" stop-color="#f59e0b" />
+        <stop offset="70%" stop-color="#3b82f6" />
+        <stop offset="100%" stop-color="#10b981" />
+      </linearGradient>
+    </defs>
 
-            <path class="gauge-red" d="M 30 150 A 120 120 0 0 1 90 46" />
-            <path class="gauge-orange" d="M 90 46 A 120 120 0 0 1 150 30" />
-            <path class="gauge-blue" d="M 150 30 A 120 120 0 0 1 210 46" />
-            <path class="gauge-green" d="M 210 46 A 120 120 0 0 1 270 150" />
+    <!-- 渐变半圆 -->
+    <path
+      d="M30 150 A120 120 0 0 1 270 150"
+      fill="none"
+      stroke="url(#gaugeGradient)"
+      stroke-width="18"
+      stroke-linecap="round"
+    />
 
-            <g
-              class="gauge-pointer"
-              :style="{
-                transform: `rotate(${marketSentiment.score * 1.8 - 90}deg)`,
-              }"
-            >
-              <line x1="150" y1="150" x2="150" y2="55" />
-            </g>
+    <!-- 扇形指针 -->
+    <g
+      class="gauge-pointer"
+      :style="{
+        transform: `rotate(${marketSentiment.score * 1.8 - 90}deg)`
+      }"
+    >
+      <path
+        d="M150 150 L138 65 L162 65 Z"
+        fill="url(#gaugeGradient)"
+      />
+    </g>
 
-            <circle cx="150" cy="150" r="10" class="gauge-dot" />
+    <!-- 中心圆 -->
+    <circle
+      cx="150"
+      cy="150"
+      r="18"
+      fill="#081327"
+      stroke="#14f1d5"
+      stroke-width="2"
+    />
 
-            <text x="30" y="170">0</text>
-            <text x="150" y="22" text-anchor="middle">50</text>
-            <text x="270" y="170" text-anchor="end">100</text>
+    <!-- 刻度 -->
+    <text x="30" y="170">0</text>
+    <text x="90" y="75">25</text>
+    <text x="150" y="30" text-anchor="middle">50</text>
+    <text x="210" y="75">75</text>
+    <text x="270" y="170" text-anchor="end">100</text>
 
-            <text x="150" y="130" text-anchor="middle" class="gauge-score-svg">
-              {{ marketSentiment.score }}/100
-            </text>
-          </svg>
-        </div>
+    <!-- 分数 -->
+    <text
+      x="150"
+      y="135"
+      text-anchor="middle"
+      class="gauge-score-svg"
+    >
+      {{ marketSentiment.score }}/100
+    </text>
+  </svg>
+</div>
 
         <div class="sentiment-copy">
           <div class="sentiment-pill">
