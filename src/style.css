@@ -1665,7 +1665,7 @@ a {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 26px;
+    gap: 40px;
     width: 100%;
     overflow: visible;
   }
@@ -1673,9 +1673,9 @@ a {
   .premium-gauge {
     width: 520px;
     height: 300px;
-    transform: scale(0.42);
+    transform: scale(0.38);
     transform-origin: top center;
-    margin: 0 auto -140px;
+    margin: 10px auto -160px;
     left: auto;
     right: auto;
   }
