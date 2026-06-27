@@ -1673,9 +1673,9 @@ a {
   .premium-gauge {
     width: 520px;
     height: 300px;
-    transform: scale(0.48);
+    transform: scale(0.42);
     transform-origin: top center;
-    margin: -30px 0 -140px;
+    margin: 0 auto -140px;
     left: auto;
     right: auto;
   }
